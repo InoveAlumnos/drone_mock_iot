@@ -1,0 +1,81 @@
+#drone {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#droneLight{
+  width: 50%;
+  height: 150px;
+  position: absolute;
+  left: 25%;
+  top: 2%;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, #ffffff, #d19a00, #c04e24, #d19a00,#ffdf85,#ffdf85,#ffdf85);
+  clip-path: polygon(55% 67%, 45% 67%, 0% 0%, 100% 0%);
+  transition: 1s;
+}
+
+svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: block;
+  height: 200px;
+  fill: black;
+  width: 100%; 
+}
+
+.propeller {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  display: block;
+}
+
+.propeller--on {
+    animation-name: spin;
+    animation-duration: .4s;
+}
+
+/* Girar las helices en el sentido correcto */
+.propeller--cw {
+    animation-direction: normal;    
+  }
+  
+.propeller--ccw {
+    animation-direction: reverse;
+}
+
+/* Efecto de encendido de las helices */
+.propeller:nth-child(1) { animation-delay: .06s;   }
+.propeller:nth-child(2) { animation-delay: .1s;   }
+.propeller:nth-child(3) { animation-delay: .25s;   }
+.propeller:nth-child(4) { animation-delay: .15s;   }
+
+/*
+#drone {
+  transition: transform 1s ease-in-out;
+}*/
+
+/*
+#drone:hover {
+    transition: transform 1s ease-in-out;
+    transform: rotateX(60deg) rotateZ(30deg) scale(1.5) translateZ(10px);
+    transform-origin: 50% 50%;
+}*/
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); 
+  }
+  to {
+    transform: rotate(360deg); 
+  }
+}
+

@@ -1,0 +1,41 @@
+.joystick-base {
+    position: relative;
+    height: 116px;
+    width: 116px;
+    border-radius: 100%;
+    border: 10px solid #08c; /* 10%*/
+    background: #08c ;
+    box-shadow: 0 0 15px #000 inset,
+        0 0 5px #000;
+    transition: border-color 0.3s;
+    cursor: pointer;
+    touch-action: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.joystick-base:hover, .joystick-base.active {
+    border-color: #08c;
+    
+    /*.joystick-shaft {
+        background: rgba(#08c, 0.35);
+    }*/
+}
+
+.joystick-base.active {
+    background: #08c;
+}
+
+.joystick-shaft {
+    position: absolute;
+    top: calc(50% - 32px);
+    left: calc(50% - 32px);
+    height: 64px;
+    width: 64px;
+    border-radius: 100%;
+    background: #08c ;
+    box-shadow: 0 0 5px #000 inset;
+    transition: background 0.3s;
+    will-change: transform;
+    touch-action: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
