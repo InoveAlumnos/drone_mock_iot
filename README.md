@@ -44,7 +44,7 @@ $ mosquitto_pub -t "actuadores/luces/1" -m 1
 # Instalación y pruebas 🔧⚙️
 Una vez levantado el server, deberá conocer la IP del servidor en su red local para poder ingresar:
 ```ssh
-http://<ip_host_flask>:5005
+http://<ip_host_flask>:5006
 ```
 Inmediatamente después podrá ver en su MQTT broker la telemetría que evoluciona a medida que interactua con el sistema. Los comandos para ver los mensajes que llegan y como controlar los actuadores por mqtt se encuentran en la sección anterior.
 
