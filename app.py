@@ -116,7 +116,7 @@ def ws_motores_event(data):
 
 
 @socketio.on('joystick_event')
-def ws_motores_event(data):
+def ws_joystick_event(data):
     # data --> diccionario de estado del joystick, enviar como JSON string
     client.publish(f"actuadores/joystick", json.dumps(data))
 
