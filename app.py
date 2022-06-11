@@ -82,7 +82,7 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/luz/1/<val>')
+@app.route('/luces/1/<val>')
 def light(val):
     socketio.emit('luz_1', int(val))
     return f"luz: {val}"
