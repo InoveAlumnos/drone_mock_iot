@@ -124,10 +124,10 @@ $("#heading").roundSlider({
 $("#accel").roundSlider({
     sliderType: "min-range",
     value: 0,
-    max : 5,
-    min : -5,
+    max : 20,
     step: 0.2,        
-    startAngle: "-90",
+    startAngle: "+90",
+    endAngle : "+360",
     drag: function(e) {
         var angle = e.value;
         data.inerciales.accel = angle;
