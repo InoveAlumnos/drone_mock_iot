@@ -137,15 +137,15 @@ $("#accel").roundSlider({
 
 document.querySelector("#latitude").value = data.gps.latitude;
 document.querySelector("#latitude").onchange = (e) => {
-    if(isNumeric(e.value) == true) {
-        data.gps.latitude = parseFloat(e.value);
+    if(isNumeric(e.target.value) == true) {
+        data.gps.latitude = parseFloat(e.target.value);
     }
 };
 
 document.querySelector("#longitude").value = data.gps.longitude;
 document.querySelector("#longitude").onchange = (e) => {
-    if(isNumeric(e.value) == true) {
-        data.gps.longitude = parseFloat(e.value);
+    if(isNumeric(e.target.value) == true) {
+        data.gps.longitude = parseFloat(e.target.value);
     }
 };
 
@@ -210,7 +210,7 @@ socket.on("connect", function() {
     socket.on('motor_1', function (msg) {
         // Si el está activado el vuelo
         // permito actualizar el estado del motor
-        if(sengine.checked == true) {
+        if(data.volar == true) {
             const val = Number(msg);
             data.motores[0] = msg;
             m1.checked = msg;
@@ -220,7 +220,7 @@ socket.on("connect", function() {
     socket.on('motor_2', function (msg) {
         // Si el está activado el vuelo
         // permito actualizar el estado del motor
-        if(sengine.checked == true) {
+        if(data.volar == true) {
             const val = Number(msg);
             data.motores[1] = msg;
             m2.checked = msg;
@@ -230,7 +230,7 @@ socket.on("connect", function() {
     socket.on('motor_3', function (msg) {
         // Si el está activado el vuelo
         // permito actualizar el estado del motor
-        if(sengine.checked == true) {
+        if(data.volar == true) {
             const val = Number(msg);
             data.motores[2] = msg;
             m3.checked = msg;
@@ -240,7 +240,7 @@ socket.on("connect", function() {
     socket.on('motor_4', function (msg) {
         // Si el está activado el vuelo
         // permito actualizar el estado del motor
-        if(sengine.checked == true) {
+        if(data.volar == true) {
             const val = Number(msg);
             data.motores[3] = msg;
             m4.checked = msg;

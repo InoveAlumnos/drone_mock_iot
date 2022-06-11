@@ -4,6 +4,8 @@
 
 Este es un proyecto realizado por miembros de inove como un servicio para incorporar telemetría de los sensores de un drone para el programa de ejemplos del curso de Python IoT.
 
+![logotipo](sistema.jpg)
+
 # Comenzando 🚀
 El objetivo de este proyecto es dar un ejemplo de aplicación de Python en la generación de datos de sensores y actuadores del tipo IoT. Este proyecto se basa en tomar la telemetría generada y compartir dicha información por mqtt.
 

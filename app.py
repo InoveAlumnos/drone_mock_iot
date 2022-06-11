@@ -56,7 +56,6 @@ def mqtt_connect():
 def on_message(client, userdata, msg):
     topic = str(msg.topic)
     value = str(msg.payload.decode("utf-8"))
-    print(msg.topic, msg.payload.decode("utf-8"))
     if topic == "actuadores/volar":
         socketio.emit('volar', int(value))
     
@@ -91,7 +90,6 @@ def light(val):
 # ---- Web sockets contra el frontend ----
 @socketio.on('sensores_event')
 def ws_sensores_event(data):
-    pass
     client.publish("sensores/inerciales", json.dumps(data["inerciales"]))
     client.publish("sensores/gps", json.dumps(data["gps"]))
 
