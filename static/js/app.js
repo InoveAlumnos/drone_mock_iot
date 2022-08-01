@@ -119,6 +119,11 @@ $("#heading").roundSlider({
         var angle = e.value;
         data.inerciales.heading = angle;
         rotate();
+    },
+    change: function(e) {
+        var angle = e.value;
+        data.inerciales.heading = angle;
+        rotate();
     }
 });
 $("#accel").roundSlider({
@@ -129,6 +134,11 @@ $("#accel").roundSlider({
     startAngle: "+90",
     endAngle : "+360",
     drag: function(e) {
+        var angle = e.value;
+        data.inerciales.accel = angle;
+        rotate();
+    },
+    change: function(e) {
         var angle = e.value;
         data.inerciales.accel = angle;
         rotate();
