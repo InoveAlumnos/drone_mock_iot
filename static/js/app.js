@@ -212,8 +212,8 @@ socket.on("connect", function() {
         // permito actualizar el estado del motor
         if(data.volar == true) {
             const val = Number(msg);
-            data.motores[0] = msg;
-            m1.checked = msg;
+            data.motores[0] = val;
+            m1.checked = val;
             update();
         }
     });
@@ -222,8 +222,8 @@ socket.on("connect", function() {
         // permito actualizar el estado del motor
         if(data.volar == true) {
             const val = Number(msg);
-            data.motores[1] = msg;
-            m2.checked = msg;
+            data.motores[1] = val;
+            m2.checked = val;
             update();
         }
     });
@@ -232,8 +232,8 @@ socket.on("connect", function() {
         // permito actualizar el estado del motor
         if(data.volar == true) {
             const val = Number(msg);
-            data.motores[2] = msg;
-            m3.checked = msg;
+            data.motores[2] = val;
+            m3.checked = val;
             update();
         }
     });
@@ -242,8 +242,8 @@ socket.on("connect", function() {
         // permito actualizar el estado del motor
         if(data.volar == true) {
             const val = Number(msg);
-            data.motores[3] = msg;
-            m4.checked = msg;
+            data.motores[3] = val;
+            m4.checked = val;
             update();
         }
     });
