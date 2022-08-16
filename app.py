@@ -42,6 +42,10 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe("actuadores/volar")
     client.subscribe("actuadores/luces/#")
     client.subscribe("actuadores/motores/#")
+    # Topicos de mensajes recibidos del dashobard
+    client.subscribe("dashboardiot/actuadores/volar")
+    client.subscribe("dashboardiot/actuadores/luces/#")
+    client.subscribe("dashboardiot/actuadores/motores/#")
 
 def mqtt_connect():
     if client.is_connected() is False:
@@ -56,22 +60,22 @@ def mqtt_connect():
 def on_message(client, userdata, msg):
     topic = str(msg.topic)
     value = str(msg.payload.decode("utf-8"))
-    if topic == "actuadores/volar":
+    if topic == "actuadores/volar"  or topic == "dashboardiot/actuadores/volar":
         socketio.emit('volar', int(value))
     
     # NOTA: Podría mejorarse el manejo del ID
     # utilizando regular expression (re)
     # Se deja de esta manera para que se vea
     # facil para el alumno
-    if topic == "actuadores/luces/1":
+    if topic == "actuadores/luces/1" or topic == "dashboardiot/actuadores/luces/1":
         socketio.emit('luz_1', int(value))
-    if topic == "actuadores/motores/1":
+    if topic == "actuadores/motores/1"  or topic == "dashboardiot/actuadores/motores/1":
         socketio.emit('motor_1', int(value))
-    if topic == "actuadores/motores/2":
+    if topic == "actuadores/motores/2"  or topic == "dashboardiot/actuadores/motores/2":
         socketio.emit('motor_2', int(value))
-    if topic == "actuadores/motores/3":
+    if topic == "actuadores/motores/3"  or topic == "dashboardiot/actuadores/motores/3":
         socketio.emit('motor_3', int(value))
-    if topic == "actuadores/motores/4":
+    if topic == "actuadores/motores/4"  or topic == "dashboardiot/actuadores/motores/4":
         socketio.emit('motor_4', int(value))
 
 
